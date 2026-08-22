@@ -628,7 +628,7 @@ def compare_browse_file():
 # ============================================================
 root = tk.Tk()
 root.title("UoB Indico Suite  |  حزمة أدوات نشاطات إندِكو")
-root.geometry("760x620")
+root.geometry("760x760")
 root.configure(bg=COLORS["bg"])
 root.resizable(False, False)
 
