@@ -25,7 +25,7 @@ jobs:
         run: pyinstaller --onefile uob_indico_suite2.py
 
       - name: Upload EXE artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: uob_indico_suite2-exe
           path: dist/uob_indico_suite2.exe
