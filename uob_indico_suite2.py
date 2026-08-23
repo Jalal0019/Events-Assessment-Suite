@@ -675,9 +675,9 @@ header = tk.Frame(root, bg=COLORS["header"], height=72)
 header.pack(fill="x", side="top")
 header.pack_propagate(False)
 
-tk.Label(header, text="جامعة بغداد  •  University of Baghdad",
+tk.Label(header, text="University of Baghdad - Website Division - Systems and Applications Unit              جامعة بغداد - شعبة الموقع الإلكتروني - وحدة الانظمة والتطبيقات",
          bg=COLORS["header"], fg="#9FB3D1", font=FONT_SUB).pack(anchor="w", padx=20, pady=(12, 0))
-tk.Label(header, text="حزمة أدوات نشاطات Indico  —  UoB Indico Suite",
+tk.Label(header, text="UoB Events Website Assessment Suite  |  حزمة تقييم موقع النشاطات العلمية",
          bg=COLORS["header"], fg=COLORS["header_fg"], font=FONT_TITLE).pack(anchor="w", padx=20, pady=(0, 10))
 
 # ---- Notebook (tabs) ----
@@ -758,7 +758,7 @@ compare_card.pack(fill="both", expand=True, pady=16)
 compare_inner = tk.Frame(compare_card, bg=COLORS["card"])
 compare_inner.pack(fill="both", expand=True, padx=24, pady=22)
 
-tk.Label(compare_inner, text="اختر التشكيل", bg=COLORS["card"], fg=COLORS["text"],
+tk.Label(compare_inner, text="اختر التشكيل من القائمة", bg=COLORS["card"], fg=COLORS["text"],
          font=FONT_LABEL, anchor="e", justify="right").grid(row=0, column=0, columnspan=2, sticky="e", pady=(0, 4))
 compare_formation_combo = ttk.Combobox(compare_inner, values=list(FORMATIONS.keys()), state="readonly",
                                         width=48, style="Card.TCombobox", justify="right")
@@ -770,22 +770,22 @@ tk.Label(compare_inner, text="سنة التقييم (مثال: 2026)", bg=COLORS
 compare_year_entry = ttk.Entry(compare_inner, width=15, font=FONT_BODY, justify="center", style="App.TEntry")
 compare_year_entry.grid(row=3, column=0, columnspan=2, sticky="w", pady=(0, 14))
 
-tk.Label(compare_inner, text="ملف الخطة (Excel)", bg=COLORS["card"], fg=COLORS["text"],
-         font=FONT_LABEL, anchor="e", justify="right").grid(row=4, column=0, columnspan=2, sticky="e", pady=(0, 4))
+tk.Label(compare_inner, text=" (Excel) ملف الخطة ", bg=COLORS["card"], fg=COLORS["text"],
+         font=FONT_LABEL, anchor="e", justify="left").grid(row=4, column=0, columnspan=2, sticky="e", pady=(0, 4))
 compare_file_entry = ttk.Entry(compare_inner, width=42, font=FONT_BODY, style="App.TEntry")
 compare_file_entry.grid(row=5, column=0, sticky="ew", pady=(0, 14))
-ttk.Button(compare_inner, text="استعراض", style="Ghost.TButton", command=compare_browse_file).grid(
+ttk.Button(compare_inner, text="Browse استعراض", style="Ghost.TButton", command=compare_browse_file).grid(
     row=5, column=1, sticky="w", padx=(8, 0), pady=(0, 14))
 
-tk.Label(compare_inner, text="رقم العمود (0 = العمود الأول) — الافتراضي 2", bg=COLORS["card"], fg=COLORS["text"],
-         font=FONT_LABEL, anchor="e", justify="right").grid(row=6, column=0, columnspan=2, sticky="e", pady=(0, 4))
+tk.Label(compare_inner, text="( رقم العمود (0 = العمود الأول) - الافتراضي 2 ( اختر رقم العمود الذي فيه العناوين في ملف الخطة العلمية", bg=COLORS["card"], fg=COLORS["text"],
+         font=FONT_LABEL, anchor="e", justify="left").grid(row=6, column=0, columnspan=3, sticky="e", pady=(0, 4))
 compare_column_entry = ttk.Entry(compare_inner, width=15, font=FONT_BODY, justify="center", style="App.TEntry")
 compare_column_entry.grid(row=7, column=0, columnspan=2, sticky="w", pady=(0, 16))
 
 compare_btn_row = tk.Frame(compare_inner, bg=COLORS["card"])
 compare_btn_row.grid(row=8, column=0, columnspan=2, sticky="ew", pady=(0, 6))
 
-compare_run_btn = ttk.Button(compare_btn_row, text="قارن Compare Titles",
+compare_run_btn = ttk.Button(compare_btn_row, text="Compare Event Titles قارن",
                               style="Accent.TButton", command=compare_start, takefocus=0)
 compare_run_btn.pack(side="right", fill="x", expand=True, ipady=6)
 
@@ -793,7 +793,7 @@ compare_open_btn = ttk.Button(compare_btn_row, text="فتح الملف", style="
                                command=compare_open_file)
 # hidden until a result exists
 
-compare_reset_btn = ttk.Button(compare_inner, text="↺ إعادة تعيين — تشكيل جديد",
+compare_reset_btn = ttk.Button(compare_inner, text="↺ إعادة تعيين - تشكيل جديد",
                                 style="Reset.TButton", command=compare_reset)
 compare_reset_btn.grid(row=9, column=0, columnspan=2, sticky="w", pady=(4, 0))
 
@@ -814,7 +814,7 @@ compare_inner.grid_columnconfigure(0, weight=1)
 compare_footer = tk.Frame(compare_inner, bg=COLORS["card"])
 compare_footer.grid(row=11, column=0, columnspan=2, sticky="ew", pady=(14, 0))
 compare_status_label = ttk.Label(compare_footer,
-                                  text="جاهز — كلما زاد عدد الأنشطة زاد وقت المقارنة، الرجاء الانتظار",
+                                  text="جاهز - كلما زاد عدد الأنشطة زاد وقت المقارنة، الرجاء الانتظار",
                                   background=COLORS["card"], foreground=COLORS["muted"], font=FONT_STATUS,
                                   wraplength=620, justify="right")
 compare_status_label.pack(anchor="e")
